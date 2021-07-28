@@ -24,7 +24,7 @@ function playStopBtn() {
         pSBtn.html('stop');
     } else {
         oscStopped();
-        pSBtn.html('play');
+        pSBtn.html('play!');
     }
 }
 
@@ -36,7 +36,7 @@ function setup() {
 
     fft = new p5.FFT();
 
-    pSBtn = createButton('play');
+    pSBtn = createButton('start!');
     pSBtn.mousePressed(playStopBtn);
 }
 
