@@ -2,12 +2,6 @@ let osc;
 let fft;
 let playing;
 
-/* function radioEqValue() {
-    const frequency = document.querySelector('input[name="frequency"]:checked').value;
-    radioEqFreq = int(frequency);
-    return radioEqFreq;
-} */
-
 function oscPlaying() {
     osc.start();
     playing = true;
@@ -57,6 +51,3 @@ function draw() {
     }
     endShape();
 }
-
-/* function loaded() {
-} */
