@@ -2,40 +2,11 @@ let osc;
 let fft;
 let playing;
 
-function radioEqValue() {
-    rEq0 = document.getElementById('frq0');
-    rEq1 = document.getElementById('frq1');
-    rEq2 = document.getElementById('frq2');
-    rEq3 = document.getElementById('frq3');
-    rEq4 = document.getElementById('frq4');
-    rEq5 = document.getElementById('frq5');
-    rEq6 = document.getElementById('frq6');
-    rEq7 = document.getElementById('frq7');
-    rEq8 = document.getElementById('frq8');
-    rEq9 = document.getElementById('frq9');
-
-    if (rEq0.checked == true) {
-        radioEqFreq = int(rEq0.value);
-    } else if (rEq1.checked == true) {
-        radioEqFreq = int(rEq1.value);
-    } else if (rEq2.checked == true) {
-        radioEqFreq = int(rEq2.value);
-    } else if (rEq3.checked == true) {
-        radioEqFreq = int(rEq3.value);
-    } else if (rEq4.checked == true) {
-        radioEqFreq = int(rEq4.value);
-    } else if (rEq5.checked == true) {
-        radioEqFreq = int(rEq5.value);
-    } else if (rEq6.checked == true) {
-        radioEqFreq = int(rEq6.value);
-    } else if (rEq7.checked == true) {
-        radioEqFreq = int(rEq7.value);
-    } else if (rEq8.checked == true) {
-        radioEqFreq = int(rEq8.value);
-    } else if (rEq9.checked == true) {
-        radioEqFreq = int(rEq9.value);
-    }
-}
+/* function radioEqValue() {
+    const frequency = document.querySelector('input[name="frequency"]:checked').value;
+    radioEqFreq = int(frequency);
+    return radioEqFreq;
+} */
 
 function oscPlaying() {
     osc.start();
@@ -70,8 +41,8 @@ function setup() {
 }
 
 function draw() {
-    radioEqValue();
-    osc.freq(radioEqFreq);
+    const frequency = int(document.querySelector('input[name="frequency"]:checked').value);
+    osc.freq(frequency);
 
     background(0);
     let waveform = fft.waveform();
